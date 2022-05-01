@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+
+</head>
+<body>
+
+<div layout:fragment="content" class="container col-sm text-center mt-4">
+    <h2 class="text text-center text-primary"> ADD EMPLOYEE</h2>
+
+<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+          method="POST">
+    <table class="table table-info mt-3" style="width:700px" align="center">
+            <tr>
+                <td>
+                <b>Name:</b>
+                </td>
+                <td>
+                <input type="text" th:field="*{name}"
+                       placeholder="Name" class="form-control mb-4 col-4" required minlength="2" maxlength="20">
+                    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"  />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Age:</b>
+                </td>
+                <td>
+                    <input type="text" th:field="*{age}"
+                           placeholder="Age" class="form-control mb-4 col-4" required >
+                    <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}" th:errorclass="error"  />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>Image:</b>
+                </td>
+                <td>
+                    <input type="text" th:field="*{image}"
+                           placeholder="Image" class="form-control mb-4 col-4" required>
+                    <p th:if="${#fields.hasErrors('image')}" th:errors="*{image}" th:errorclass="error" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>Address:</b>
+                </td>
+                <td>
+                    <input type="text" th:field="*{address}"
+                           placeholder="Address" class="form-control mb-4 col-4" required minlength="5" maxlength="20">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="center"><button class="btn btn-primary" type="submit">Save Employee</button></td>
+            </tr>
+
+    </table>
+</form>
+</div>
+</body>
+</html>

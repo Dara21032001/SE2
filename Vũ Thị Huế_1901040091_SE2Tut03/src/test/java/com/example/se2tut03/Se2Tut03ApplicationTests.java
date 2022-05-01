@@ -1,0 +1,13 @@
+package com.example.se2tut03;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Se2Tut03ApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
